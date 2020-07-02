@@ -40,8 +40,8 @@
     }
 }
 
-.dropwdown-product:hover {
-    cursor: auto;
+.dropwown-product:hover {
+    cursor: default !important;
 }
 
 #footer {

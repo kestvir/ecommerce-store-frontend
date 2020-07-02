@@ -37,7 +37,7 @@ class CartDropdown extends Component {
                         <React.Fragment>
                             {cart.order_items.map(order_item => {
                                 return (
-                                    <Dropdown.Item key={order_item.id} className="dropwdown-product">
+                                    <Dropdown.Item key={order_item.id} className="dropdown-product">
                                         {order_item.quantity} x {order_item.product.name}
                                     </Dropdown.Item>
                                 );

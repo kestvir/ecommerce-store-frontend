@@ -48,14 +48,15 @@ class ProductDetail extends React.Component {
     };
 
     handleChange = e => {
+        console.log(e.target.value)
         this.setState({ [e.target.name]: parseInt(e.target.value) });
     };
 
-    handleAddToCart = (slug, quantity) => {
+    handleAddToCart = slug => {
         const { token, fetchCart } = this.props
         this.setState({ loading: true });
         authAxios(token)
-            .post(addToCartURL, { slug, quantity })
+            .post(addToCartURL, { slug, quantity: this.state.quantity })
             .then(res => {
                 fetchCart(token);
                 this.setState({ loading: false });
