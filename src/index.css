@@ -40,6 +40,10 @@
     }
 }
 
+.item:hover {
+    cursor: auto;
+}
+
 #footer {
     position: absolute;
     bottom: 0;
