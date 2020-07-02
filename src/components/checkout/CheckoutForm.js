@@ -125,7 +125,7 @@ class CheckoutForm extends Component {
                             this.setState({ loading: false, success: true });
                             setTimeout(() => {
                                 this.props.history.push('/');
-                            }, 3000)
+                            }, 2000)
                         })
                         .catch(err => {
                             this.setState({ loading: false, error: err });
