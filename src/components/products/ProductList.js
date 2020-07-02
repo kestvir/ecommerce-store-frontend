@@ -3,7 +3,6 @@ import axios from 'axios';
 import {
     Container,
     Dimmer,
-    Image,
     Loader,
     Message,
     Segment,
@@ -66,8 +65,6 @@ class ProductList extends Component {
                         <Dimmer active inverted>
                             <Loader inverted>Loading</Loader>
                         </Dimmer>
-
-                        <Image src="/images/wireframe/short-paragraph.png" />
                     </Segment>
                 )}
                 <Grid doubling stackable centered columns={4} >
