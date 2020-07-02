@@ -8,7 +8,8 @@ import {
 } from "semantic-ui-react";
 
 
-const Product = ({ image, price, name, slug, id, handleAddToCart, history }) => {
+const Product = ({ image, price, name, slug, id, handleAddToCart, history, loading }) => {
+    const disabled = loading
     return (
         <Grid.Column className="product-cart-column">
             <Card >
@@ -16,7 +17,7 @@ const Product = ({ image, price, name, slug, id, handleAddToCart, history }) => 
                 <Card.Content>
                     <Card.Header>{name}</Card.Header>
                     <div className="product-price-and-buttons">
-                        <Button primary onClick={() => handleAddToCart(slug)} size='tiny'>Add</Button>
+                        <Button disabled={disabled} primary onClick={() => handleAddToCart(slug)} size='tiny'>Add</Button>
                         <Button secondary onClick={() => history.push(`/products/${id}`)} size='tiny'>Details</Button>
                         <span className="card-item-price">{price}&euro;</span>
                     </div>

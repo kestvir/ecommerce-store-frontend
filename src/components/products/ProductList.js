@@ -72,6 +72,7 @@ class ProductList extends Component {
                         return (
                             <Product
                                 key={product.id}
+                                loading={loading}
                                 {...product}
                                 handleAddToCart={this.handleAddToCart}
                             />)
