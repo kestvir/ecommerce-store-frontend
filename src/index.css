@@ -1,0 +1,47 @@
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+
+.menu.transition.visible {
+    left: -35px;
+}
+
+.card-item-price {
+    font-size: 20px;
+    margin-left: auto;
+}
+
+.ui.grid {
+    margin-top: 0;
+}
+
+.ui.card {
+    width: 100%;
+}
+
+.ui.dropdown .menu>.divider {
+    margin: 0;
+}
+
+.product-price-and-buttons {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .ui.card {
+        width: 350px;
+    }
+    .ui.grid>.column:not(.row) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
