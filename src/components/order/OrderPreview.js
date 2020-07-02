@@ -14,7 +14,7 @@ const OrderPreview = props => {
                                 <Item key={orderItem.id}>
                                     <Item.Image
                                         size="tiny"
-                                        src={`${BASE_API_URL}${orderItem.product.image}`}
+                                        src={orderItem.product.image}
                                     />
                                     <Item.Content verticalAlign="middle">
                                         <Item.Header as="a">
