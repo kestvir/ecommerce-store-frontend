@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { localhost } from '../../constants';
+import { BASE_API_URL } from '../../constants';
 
 import {
     AUTH_ERROR,
