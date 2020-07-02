@@ -39,7 +39,6 @@ export const cartFail = error => {
 export const fetchCart = token => {
     return dispatch => {
         dispatch(cartStart());
-        console.log(token)
         authAxios(token)
             .get(orderSummaryURL)
             .then(res => {
@@ -84,6 +83,8 @@ export const removeItemQuantityFromCart = (slug, token) => {
 
 export const removeItemFromCart = (itemID, token) => {
     return dispatch => {
+        dispatch(cartStart());
+
         authAxios(token)
             .delete(orderItemDeleteURL(itemID))
             .then(res => {

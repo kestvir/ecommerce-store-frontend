@@ -19,7 +19,7 @@ class OrderSummary extends Component {
     }
 
     render() {
-        const { cart, addItemToCart, removeItemQuantityFromCart, removeItemFromCart, error, token } = this.props;
+        const { cart, addItemToCart, removeItemQuantityFromCart, removeItemFromCart, error, token, loading } = this.props;
         return (
             <Container style={{ marginTop: "25px" }}>
                 {error && (
@@ -72,12 +72,15 @@ class OrderSummary extends Component {
                                             </Table.Cell>
                                             <Table.Cell>
                                                 {orderItem.total_item_price}&euro;
-                                            <Icon
+                                            <Button size="mini"
                                                     name="trash"
                                                     color="red"
+                                                    disabled={loading}
                                                     style={{ float: "right", cursor: "pointer" }}
                                                     onClick={() => removeItemFromCart(orderItem.id, token)}
-                                                />
+                                                >
+                                                    delete
+                                            </Button>
                                             </Table.Cell>
                                         </Table.Row>
                                     );
