@@ -1,8 +1,10 @@
-export const localhost = "http://127.0.0.1:8000";
+const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
+
+export const BASE_API_URL;
 
 const apiURL = "/api";
 
-export const endpoint = `${localhost}${apiURL}`;
+export const endpoint = `${BASE_API_URL}${apiURL}`;
 
 export const productListURL = `${endpoint}/products/`;
 export const productDetailURL = id => `${endpoint}/products/${id}/`;

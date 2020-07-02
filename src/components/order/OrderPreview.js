@@ -1,6 +1,6 @@
 import React from "react";
 import { Item, Label } from "semantic-ui-react";
-import { localhost } from "../../constants";
+import { BASE_API_URL } from "../../constants";
 
 const OrderPreview = props => {
     const { data } = props;
@@ -14,7 +14,7 @@ const OrderPreview = props => {
                                 <Item key={orderItem.id}>
                                     <Item.Image
                                         size="tiny"
-                                        src={`${localhost}${orderItem.product.image}`}
+                                        src={`${BASE_API_URL}${orderItem.product.image}`}
                                     />
                                     <Item.Content verticalAlign="middle">
                                         <Item.Header as="a">
