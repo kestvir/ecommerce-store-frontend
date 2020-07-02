@@ -1,6 +1,5 @@
 import React from "react";
 import { Item, Label } from "semantic-ui-react";
-import { BASE_API_URL } from "../../constants";
 
 const OrderPreview = props => {
     const { data } = props;
