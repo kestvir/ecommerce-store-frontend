@@ -52,7 +52,7 @@ class ProductList extends Component {
     render() {
         const { data, error, loading } = this.state;
         return (
-            <Container style={{ marginTop: "3rem" }}>
+            <Container style={{ marginTop: "2rem" }}>
                 {error && (
                     <Message
                         error
