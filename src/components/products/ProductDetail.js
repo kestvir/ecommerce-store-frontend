@@ -62,7 +62,11 @@ class ProductDetail extends React.Component {
                 this.setState({ loading: false });
             })
             .catch(err => {
-                this.setState({ error: err, loading: false });
+                if (err.status === 401) {
+                    this.setState({ error: "You are not logged in", loading: false });
+                } else {
+                    this.setState({ error: err, loading: false });
+                }
             });
     };
 

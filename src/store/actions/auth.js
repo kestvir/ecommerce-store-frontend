@@ -57,7 +57,6 @@ export const login = (username, password) => dispatch => {
             });
         })
         .catch((err) => {
-            console.log(err.response)
             dispatch({
                 payload: err,
                 type: LOGIN_FAIL,
