@@ -46,7 +46,7 @@ class ProductList extends Component {
             })
             .catch(err => {
                 console.log(err)
-                if (err.status === 401) {
+                if (err.response.status === 401) {
                     this.setState({ error: "You are not logged in", loading: false });
                 } else {
                     this.setState({ error: err, loading: false });
