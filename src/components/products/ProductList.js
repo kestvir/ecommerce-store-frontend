@@ -63,7 +63,7 @@ class ProductList extends Component {
                         content={JSON.stringify(error)}
                     />
                 )}
-                {loading && (
+                {!loading && (
                     <Spinner />
                 )}
                 <Grid doubling stackable centered columns={4} >
