@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import {
     Container,
-    Dimmer,
-    Loader,
     Message,
-    Segment,
     Grid
 } from "semantic-ui-react";
+import Spinner from "../common/Spinner";
 import { connect } from "react-redux";
 import { productListURL } from "../../constants";
 import Product from './Product';
@@ -47,7 +45,7 @@ class ProductList extends Component {
             .catch(err => {
                 console.log(err)
                 if (err.response.status === 401) {
-                    this.setState({ error: "You are not logged in", loading: false });
+                    this.setState({ error: "You are not logged in!", loading: false });
                 } else {
                     this.setState({ error: err, loading: false });
                 }
@@ -62,15 +60,11 @@ class ProductList extends Component {
                     <Message
                         error
                         header="There was some errors with your submission"
-                        content={error.message}
+                        content={JSON.stringify(error)}
                     />
                 )}
                 {loading && (
-                    <Segment>
-                        <Dimmer active inverted>
-                            <Loader inverted>Loading</Loader>
-                        </Dimmer>
-                    </Segment>
+                    <Spinner />
                 )}
                 <Grid doubling stackable centered columns={4} >
                     {data.map(product => {

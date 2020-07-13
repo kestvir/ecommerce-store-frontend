@@ -7,14 +7,12 @@ import {
     Form,
     Label,
     Container,
-    Dimmer,
     Icon,
-    Loader,
     Message,
-    Segment,
     Input,
     Item
 } from "semantic-ui-react";
+import Spinner from "../common/Spinner";
 import { productDetailURL, addToCartURL } from "../../constants";
 import { fetchCart } from "../../store/actions/cart";
 import { authAxios } from "../../utils";
@@ -63,7 +61,7 @@ class ProductDetail extends React.Component {
             })
             .catch(err => {
                 if (err.response.status === 401) {
-                    this.setState({ error: "You are not logged in", loading: false });
+                    this.setState({ error: "You are not logged in!", loading: false });
                 } else {
                     this.setState({ error: err, loading: false });
                 }
@@ -84,11 +82,7 @@ class ProductDetail extends React.Component {
                     />
                 )}
                 {loading && (
-                    <Segment>
-                        <Dimmer active inverted>
-                            <Loader inverted>Loading</Loader>
-                        </Dimmer>
-                    </Segment>
+                    <Spinner />
                 )}
                 <Item.Group>
                     <Item>

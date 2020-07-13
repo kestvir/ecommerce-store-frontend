@@ -8,10 +8,11 @@ import {
 const Spinner = () => {
     return (
         <Segment>
-            <Dimmer active inverted>
-                <Loader inverted>Loading</Loader>
+            <Dimmer active>
+                <Loader size='big'>Loading</Loader>
             </Dimmer>
         </Segment>
+
     )
 }
 
