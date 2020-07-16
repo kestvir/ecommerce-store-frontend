@@ -7,12 +7,9 @@ import {
 
 const Footer = () => {
     return (
-        <Segment inverted vertical style={{ padding: '2rem 0' }} id="footer">
+        <Segment inverted vertical style={{ padding: '1rem 0' }} id="footer">
             <Container textAlign='center'>
                 <List horizontal inverted divided link size='small'>
-                    <List.Item as='a' href='#'>
-                        Site Map
-                    </List.Item>
                     <List.Item as='a' href='#'>
                         Contact Us
                 </List.Item>
