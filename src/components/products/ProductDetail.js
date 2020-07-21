@@ -85,23 +85,23 @@ class ProductDetail extends React.Component {
                     <Spinner />
                 )}
                 <Item.Group>
-                    <Item>
-                        <Item.Image src={product.image} />
+                    <Item className="item-detail-container">
+                        <Item.Image className="item-detail-image" src={product.image} />
                         <Item.Content>
-                            <Item.Header>{product.name}</Item.Header>
+                            <Item.Header className="item-detail-header">{product.name}</Item.Header>
                             <Item.Meta>
-                                <span className='price'>{product.price}&euro;</span>
+                                <span className="item-detail-price">{product.price}&euro;</span>
                             </Item.Meta>
                             <Item.Description>{product.description}</Item.Description>
                             <Item.Extra>
                                 <Form>
                                     <Form.Field inline>
-                                        <Label pointing='right'>Quantity</Label>
+                                        <Label pointing="ight">Quantity</Label>
                                         <Input
                                             onChange={this.handleChange}
-                                            control='input'
+                                            control="input"
                                             name="quantity"
-                                            type='number'
+                                            type="number"
                                             value={this.state.quantity}
                                             min={1} />
                                         <Button
