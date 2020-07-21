@@ -3,9 +3,9 @@ import { Container, Segment } from 'semantic-ui-react'
 
 const Footer = () => {
     return (
-        <Segment inverted vertical style={{ padding: "1rem 0" }} id="footer">
+        <Segment inverted vertical id="footer">
             <Container textAlign='center'>
-                <p>© 2020 Copyright: <span style={{ color: "#fff" }}>Kęstutis Virbickas</span></p>
+                <p>© 2020 Copyright: Kęstutis Virbickas</p>
             </Container>
         </Segment>
     )
