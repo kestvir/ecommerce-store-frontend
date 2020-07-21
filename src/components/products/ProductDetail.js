@@ -89,8 +89,8 @@ class ProductDetail extends React.Component {
                         <Item.Image className="item-detail-image" src={product.image} />
                         <Item.Content>
                             <Item.Header className="item-detail-header">{product.name}</Item.Header>
-                            <Item.Meta>
-                                <span className="item-detail-price">{product.price}&euro;</span>
+                            <Item.Meta className="item-detail-price">
+                                <span>{product.price}&euro;</span>
                             </Item.Meta>
                             <Item.Description>{product.description}</Item.Description>
                             <Item.Extra>
