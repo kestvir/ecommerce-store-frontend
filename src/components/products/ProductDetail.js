@@ -81,7 +81,7 @@ class ProductDetail extends React.Component {
                         content={JSON.stringify(error)}
                     />
                 )}
-                {!loading && (
+                {loading && (
                     <Spinner />
                 )}
                 <Item.Group>
