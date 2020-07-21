@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
         return (
             <Grid
                 textAlign="center"
-                style={{ height: "100vh" }}
+                className="container-content"
                 verticalAlign="middle"
             >
                 <Grid.Column style={{ maxWidth: 450 }}>

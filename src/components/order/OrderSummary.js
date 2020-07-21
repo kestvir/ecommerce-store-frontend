@@ -21,7 +21,7 @@ class OrderSummary extends Component {
     render() {
         const { cart, addItemToCart, removeItemQuantityFromCart, removeItemFromCart, error, token, loading } = this.props;
         return (
-            <Container style={{ marginTop: "25px" }}>
+            <Container className="container-content">
                 {error && (
                     <Message
                         error

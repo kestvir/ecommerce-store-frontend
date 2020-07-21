@@ -4,6 +4,7 @@
 
 .container-content {
     min-height: calc(100vh - 40px - 47px);
+    padding-bottom: 2rem;
 }
 
 .menu.transition.visible {
