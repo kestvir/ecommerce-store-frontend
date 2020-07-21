@@ -51,16 +51,17 @@
 }
 
 .item-detail-header {
-    display: block;
-    font-size: 2rem;
+    display: block !important;
+    font-size: 2rem !important;
+    margin: 0.7rem 0;
 }
 
 .item-detail-price {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
 }
 
 .item-detail-image {
-    max-width: 400px;
+    max-width: 400px !important;
 }
 
 @media screen and (max-width: 767px) {
