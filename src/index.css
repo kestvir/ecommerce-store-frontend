@@ -3,7 +3,7 @@
 }
 
 .container-content {
-    min-height: calc(100vh - 2.5rem - 2.5rem - 3rem);
+    min-height: calc(100vh - 40px - 47px);
 }
 
 .menu.transition.visible {
@@ -93,8 +93,4 @@
     .item-quantity-input {
         margin: 0.7rem 0;
     }
-}
-
-#nav, #footer {
-    height: 2.5rem;
 }
