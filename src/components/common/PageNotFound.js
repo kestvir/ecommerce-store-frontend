@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const PageNotFound = () => {
     return (
-        <Container className="container-content .align-content-center">
+        <Container className="container-content align-content-center">
             <Grid >
                 <Grid.Column textAlign="center" verticalAlign='middle' >
                     <h2 style={{ fontSize: "60px" }}>404</h2>
