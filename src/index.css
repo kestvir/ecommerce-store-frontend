@@ -65,6 +65,12 @@
     width: auto !important;
 }
 
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 767px) {
     .ui.card {
         width: 350px;
