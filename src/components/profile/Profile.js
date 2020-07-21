@@ -215,7 +215,7 @@ class Profile extends Component {
         let activeNonAddressComponent = this.whichNonAddressComponentActive()
 
         return (
-            <Grid container columns={2} divided className="align-content-center">
+            <Grid container columns={2} divided className="container-content align-content-center">
                 <Grid.Row columns={1}>
                     <Grid.Column>
                         {loading && (
