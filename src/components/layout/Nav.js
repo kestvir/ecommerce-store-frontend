@@ -13,7 +13,7 @@ class Nav extends Component {
     render() {
         const { isAuth } = this.props;
         return (
-            <div>
+            <div id="nav">
                 <Menu inverted >
                     <Container>
                         <Link to="/">

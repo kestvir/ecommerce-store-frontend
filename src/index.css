@@ -1,6 +1,9 @@
 .wrapper {
     position: relative;
-    min-height: 100vh;
+}
+
+.container {
+    min-height: calc(100vh - 5rem);
 }
 
 .menu.transition.visible {
@@ -92,8 +95,6 @@
     }
 }
 
-/* #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-} */
+#nav, #footer {
+    height: 2.5rem;
+}
