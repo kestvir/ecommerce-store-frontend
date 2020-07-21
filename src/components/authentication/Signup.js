@@ -82,7 +82,7 @@ class RegistrationForm extends React.Component {
                     </Header>
 
                         {error && this.handleLoginErrors(error).map(err => {
-                            return <p key={uuid()}>{err}</p>
+                            return <p style={{ color: "red" }} key={uuid()}>{err}</p>
                         })}
 
                         {passwordsMatchErr === false && <p>The passwords do not match</p>}
