@@ -81,7 +81,7 @@ class ProductDetail extends React.Component {
                         content={JSON.stringify(error)}
                     />
                 )}
-                {loading && (
+                {!loading && (
                     <Spinner />
                 )}
                 <Item.Group>
@@ -95,10 +95,11 @@ class ProductDetail extends React.Component {
                             <Item.Description>{product.description}</Item.Description>
                             <Item.Extra>
                                 <Form>
-                                    <Form.Field inline>
+                                    <Form.Field inline className="item-detail-options">
                                         <Label pointing="ight">Quantity</Label>
                                         <Input
                                             onChange={this.handleChange}
+                                            className="item-quantity-input"
                                             control="input"
                                             name="quantity"
                                             type="number"

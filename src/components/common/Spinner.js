@@ -9,7 +9,7 @@ const Spinner = () => {
     return (
         <Segment className="spinner">
             <Dimmer active inverted>
-                <Loader size='large'>Loading</Loader>
+                <Loader size='massive'>Loading</Loader>
             </Dimmer>
         </Segment>
     )
