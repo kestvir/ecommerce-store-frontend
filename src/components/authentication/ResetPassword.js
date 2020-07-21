@@ -6,7 +6,8 @@ import {
     Grid,
     Header,
     Segment,
-    Message
+    Message,
+    Container
 } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { login } from "../../store/actions/auth";
@@ -52,56 +53,57 @@ class LoginForm extends React.Component {
         const { email, loading, error, success } = this.state;
 
         return (
-            <Grid
-                textAlign="center"
-                className="container-content"
-                verticalAlign="middle"
-            >
-                <Grid.Column style={{ maxWidth: 450 }}>
-                    <Header as="h2" color="black" textAlign="center">
-                        Reset Password
+            <Container className="container-content align-content-center">
+                <Grid
+                    textAlign="center"
+                    verticalAlign="middle"
+                >
+                    <Grid.Column className="auth-form">
+                        <Header as="h2" color="black" textAlign="center">
+                            Reset Password
                      </Header>
 
-                    {error && (
-                        <Message
-                            error
-                            header="There was some errors with your submission"
-                            content={JSON.stringify(error)}
-                        />
-                    )}
+                        {error && (
+                            <Message
+                                error
+                                header="There was some errors with your submission"
+                                content={JSON.stringify(error)}
+                            />
+                        )}
 
-                    {success && (
-                        <Message success header="Success!" content={success} />
-                    )}
+                        {success && (
+                            <Message success header="Success!" content={success} />
+                        )}
 
-                    <React.Fragment>
-                        <Form size="large" onSubmit={this.handleSubmit}>
-                            <Segment stacked>
-                                <Form.Input
-                                    onChange={this.handleChange}
-                                    value={email}
-                                    name="email"
-                                    type="email"
-                                    fluid
-                                    icon="user"
-                                    iconPosition="left"
-                                    placeholder="Enter Your Email"
-                                />
+                        <React.Fragment>
+                            <Form size="large" onSubmit={this.handleSubmit}>
+                                <Segment stacked>
+                                    <Form.Input
+                                        onChange={this.handleChange}
+                                        value={email}
+                                        name="email"
+                                        type="email"
+                                        fluid
+                                        icon="user"
+                                        iconPosition="left"
+                                        placeholder="Enter Your Email"
+                                    />
 
-                                <Button
-                                    color="blue"
-                                    fluid
-                                    size="large"
-                                    loading={loading}
-                                    disabled={loading}
-                                >
-                                    Send Email
+                                    <Button
+                                        color="blue"
+                                        fluid
+                                        size="large"
+                                        loading={loading}
+                                        disabled={loading}
+                                    >
+                                        Send Email
                                 </Button>
-                            </Segment>
-                        </Form>
-                    </React.Fragment>
-                </Grid.Column>
-            </Grid>
+                                </Segment>
+                            </Form>
+                        </React.Fragment>
+                    </Grid.Column>
+                </Grid>
+            </Container>
         );
     }
 }

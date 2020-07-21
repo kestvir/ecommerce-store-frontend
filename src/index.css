@@ -13,6 +13,10 @@
     justify-content: center;
 }
 
+.auth-form {
+    width: 450px !important;
+}
+
 .menu.transition.visible {
     left: -35px;
 }
@@ -99,5 +103,8 @@
     }
     .item-quantity-input {
         margin: 0.7rem 0;
+    }
+    .auth-form {
+        width: 350px !important;
     }
 }

@@ -57,7 +57,6 @@ class Email extends Component {
 
     render() {
         const { errors, loading, email, success } = this.state;
-        console.log(success)
 
         return (
             <div>

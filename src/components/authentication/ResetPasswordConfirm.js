@@ -6,7 +6,8 @@ import {
     Grid,
     Header,
     Segment,
-    Message
+    Message,
+    Container
 } from "semantic-ui-react";
 import { userPasswordResetConfirm } from "../../constants";
 
@@ -51,56 +52,57 @@ class ResetPasswordConfirm extends React.Component {
         const { newPassword, loading, error, success } = this.state;
 
         return (
-            <Grid
-                textAlign="center"
-                className="container-content"
-                verticalAlign="middle"
-            >
-                <Grid.Column style={{ maxWidth: 450 }}>
-                    <Header as="h2" color="black" textAlign="center">
-                        Enter New Password
+            <Container className="container-content align-content-center">
+                <Grid
+                    textAlign="center"
+                    verticalAlign="middle"
+                >
+                    <Grid.Column className="auth-form" >
+                        <Header as="h2" color="black" textAlign="center">
+                            Enter New Password
                      </Header>
 
-                    {error && (
-                        <Message
-                            error
-                            header="There was some errors with your submission"
-                            content={JSON.stringify(error)}
-                        />
-                    )}
+                        {error && (
+                            <Message
+                                error
+                                header="There was some errors with your submission"
+                                content={JSON.stringify(error)}
+                            />
+                        )}
 
-                    {success && (
-                        <Message success header="Success!" content={success} />
-                    )}
+                        {success && (
+                            <Message success header="Success!" content={success} />
+                        )}
 
-                    <React.Fragment>
-                        <Form size="large" onSubmit={this.handleSubmit}>
-                            <Segment stacked>
-                                <Form.Input
-                                    onChange={this.handleChange}
-                                    value={newPassword}
-                                    name="newPassword"
-                                    type="password"
-                                    fluid
-                                    icon="user"
-                                    iconPosition="left"
-                                    placeholder="Enter New Password"
-                                />
+                        <React.Fragment>
+                            <Form size="large" onSubmit={this.handleSubmit}>
+                                <Segment stacked>
+                                    <Form.Input
+                                        onChange={this.handleChange}
+                                        value={newPassword}
+                                        name="newPassword"
+                                        type="password"
+                                        fluid
+                                        icon="user"
+                                        iconPosition="left"
+                                        placeholder="Enter New Password"
+                                    />
 
-                                <Button
-                                    color="blue"
-                                    fluid
-                                    size="large"
-                                    loading={loading}
-                                    disabled={loading}
-                                >
-                                    Reset
+                                    <Button
+                                        color="blue"
+                                        fluid
+                                        size="large"
+                                        loading={loading}
+                                        disabled={loading}
+                                    >
+                                        Reset
                                 </Button>
-                            </Segment>
-                        </Form>
-                    </React.Fragment>
-                </Grid.Column>
-            </Grid>
+                                </Segment>
+                            </Form>
+                        </React.Fragment>
+                    </Grid.Column>
+                </Grid>
+            </Container>
         );
     }
 }

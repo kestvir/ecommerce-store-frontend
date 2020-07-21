@@ -9,6 +9,7 @@ import {
     Label,
     Menu,
     Message,
+    Container
 } from "semantic-ui-react";
 import {
     countryListURL,
@@ -215,68 +216,70 @@ class Profile extends Component {
         let activeNonAddressComponent = this.whichNonAddressComponentActive()
 
         return (
-            <Grid container columns={2} divided className="container-content align-content-center">
-                <Grid.Row columns={1}>
-                    <Grid.Column>
-                        {loading && (
-                            <Spinner />
-                        )}
-                        {error && (
-                            <Message
-                                error
-                                header="There was an error"
-                                content={JSON.stringify(error)}
-                            />
-                        )}
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column width={6}>
-                        <Menu pointing vertical fluid>
-                            <Menu.Item
-                                name="Billing Address"
-                                active={activeItem === "billingAddress"}
-                                onClick={() => this.handleItemClick("billingAddress")}
-                            />
-                            <Menu.Item
-                                name="Shipping Address"
-                                active={activeItem === "shippingAddress"}
-                                onClick={() => this.handleItemClick("shippingAddress")}
-                            />
-                            <Menu.Item
-                                name="Payment history"
-                                active={activeItem === "paymentHistory"}
-                                onClick={() => this.handleItemClick("paymentHistory")}
-                            />
-                            <Menu.Item
-                                name="Username"
-                                active={activeItem === "username"}
-                                onClick={() => this.handleItemClick("username")}
-                            />
-                            <Menu.Item
-                                name="Email"
-                                active={activeItem === "email"}
-                                onClick={() => this.handleItemClick("email")}
-                            />
-                            <Menu.Item
-                                name="Password"
-                                active={activeItem === "password"}
-                                onClick={() => this.handleItemClick("password")}
-                            />
-                        </Menu>
-                    </Grid.Column>
-                    <Grid.Column width={10}>
-                        <Header>{this.handleGetActiveItem()}</Header>
-                        <Divider />
-                        {activeItem !== "billingAddress" && activeItem !== "shippingAddress" ? (
-                            activeNonAddressComponent
-                        ) : (
-                                this.renderAddresses()
+            <Container className="container-content">
+                <Grid container columns={2} divided >
+                    <Grid.Row columns={1}>
+                        <Grid.Column>
+                            {loading && (
+                                <Spinner />
                             )}
+                            {error && (
+                                <Message
+                                    error
+                                    header="There was an error"
+                                    content={JSON.stringify(error)}
+                                />
+                            )}
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column width={6}>
+                            <Menu pointing vertical fluid>
+                                <Menu.Item
+                                    name="Billing Address"
+                                    active={activeItem === "billingAddress"}
+                                    onClick={() => this.handleItemClick("billingAddress")}
+                                />
+                                <Menu.Item
+                                    name="Shipping Address"
+                                    active={activeItem === "shippingAddress"}
+                                    onClick={() => this.handleItemClick("shippingAddress")}
+                                />
+                                <Menu.Item
+                                    name="Payment history"
+                                    active={activeItem === "paymentHistory"}
+                                    onClick={() => this.handleItemClick("paymentHistory")}
+                                />
+                                <Menu.Item
+                                    name="Username"
+                                    active={activeItem === "username"}
+                                    onClick={() => this.handleItemClick("username")}
+                                />
+                                <Menu.Item
+                                    name="Email"
+                                    active={activeItem === "email"}
+                                    onClick={() => this.handleItemClick("email")}
+                                />
+                                <Menu.Item
+                                    name="Password"
+                                    active={activeItem === "password"}
+                                    onClick={() => this.handleItemClick("password")}
+                                />
+                            </Menu>
+                        </Grid.Column>
+                        <Grid.Column width={10}>
+                            <Header>{this.handleGetActiveItem()}</Header>
+                            <Divider />
+                            {activeItem !== "billingAddress" && activeItem !== "shippingAddress" ? (
+                                activeNonAddressComponent
+                            ) : (
+                                    this.renderAddresses()
+                                )}
 
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid >
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid >
+            </Container>
         );
     }
 }
