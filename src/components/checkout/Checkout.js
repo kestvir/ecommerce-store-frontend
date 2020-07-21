@@ -12,7 +12,7 @@ const InjectedForm = injectStripe(CheckoutForm);
 const API_KEY = process.env.REACT_APP_PUBLIC_STRIPE_API_KEY;
 
 const WrappedForm = () => (
-    <Container text className="container-content">
+    <Container text className="container-content align-content-center">
         <StripeProvider apiKey={API_KEY}>
             <div>
                 <h1>Complete your order</h1>

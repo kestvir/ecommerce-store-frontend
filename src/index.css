@@ -7,6 +7,11 @@
     padding-bottom: 2rem;
 }
 
+.align-content-center {
+    display: flex;
+    align-items: center;
+}
+
 .menu.transition.visible {
     left: -35px;
 }
