@@ -11,7 +11,7 @@ import {
 import uuid from "react-uuid";
 import { connect } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
-import { register } from "../../store/actions/auth";
+import { register, resetRegisterErrs } from "../../store/actions/auth";
 
 class RegistrationForm extends React.Component {
     state = {
@@ -22,20 +22,25 @@ class RegistrationForm extends React.Component {
         passwordsMatchErr: null
     };
 
+    componentWillUnmount() {
+        this.props.resetRegisterErrs()
+    }
+
     handleSubmit = e => {
         e.preventDefault();
         const { username, email, password, password2 } = this.state;
+        const newUser = {
+            username,
+            password,
+            email,
+        };
 
         if (password !== password2) {
-            return this.setState({ passwordsMatchErr: false });
+            this.setState({ passwordsMatchErr: true });
+            this.props.resetRegisterErrs()
         }
         else {
-            const newUser = {
-                username,
-                password,
-                email,
-            };
-            this.setState({ passwordsMatchErr: true });
+            this.setState({ passwordsMatchErr: false });
             this.props.register(newUser);
         }
 
@@ -46,7 +51,6 @@ class RegistrationForm extends React.Component {
     };
 
     handleLoginErrors = (errObj) => {
-        console.log(errObj.response)
         const errResponse = errObj.response;
         const errArrStrs = [];
 
@@ -85,7 +89,7 @@ class RegistrationForm extends React.Component {
                             return <p style={{ color: "red" }} key={uuid()}>{err}</p>
                         })}
 
-                        {passwordsMatchErr === false && <p>The passwords do not match</p>}
+                        {passwordsMatchErr && <p style={{ color: "red" }}> PASSWORD: The passwords do not match</p>}
 
                         <React.Fragment>
                             <Form size="large" onSubmit={this.handleSubmit}>
@@ -163,5 +167,5 @@ const mapStateToProps = state => {
 
 
 export default connect(
-    mapStateToProps, { register }
+    mapStateToProps, { register, resetRegisterErrs }
 )(RegistrationForm);

@@ -7,6 +7,8 @@ import {
     LOGOUT_SUCCESS,
     REGISTER_SUCCESS,
     REGISTER_FAIL,
+    RESET_REGISTER_ERRORS,
+    RESET_LOGIN_ERRORS
 } from '../actions/types';
 
 const initialState = {
@@ -84,10 +86,19 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 token: null,
-                error: null,
                 user: null,
                 isAuth: false,
                 loading: false
+            };
+        case RESET_REGISTER_ERRORS:
+            return {
+                ...state,
+                registerError: null
+            };
+        case RESET_LOGIN_ERRORS:
+            return {
+                ...state,
+                loginError: null
             }
         default:
             return state;

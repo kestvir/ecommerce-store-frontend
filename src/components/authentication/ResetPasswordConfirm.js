@@ -65,7 +65,7 @@ class ResetPasswordConfirm extends React.Component {
                         {error && (
                             <Message
                                 error
-                                header="There was some errors with your submission"
+                                header="There were some errors with your submission"
                                 content={JSON.stringify(error)}
                             />
                         )}

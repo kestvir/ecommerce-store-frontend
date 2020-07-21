@@ -11,13 +11,17 @@ import {
 import uuid from "react-uuid";
 import { connect } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
-import { login } from "../../store/actions/auth";
+import { login, resetLoginErrs } from "../../store/actions/auth";
 
 class LoginForm extends React.Component {
     state = {
         username: "",
         password: ""
     };
+
+    componentWillUnmount() {
+        this.props.resetLoginErrs()
+    }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
@@ -66,7 +70,7 @@ class LoginForm extends React.Component {
                      </Header>
 
                         {error && this.handleLoginErrors(error).map(err => {
-                            return <p style={{color: "red"}} key={uuid()}>{err}</p>
+                            return <p style={{ color: "red" }} key={uuid()}>{err}</p>
                         })}
 
                         <React.Fragment>
@@ -127,5 +131,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { login }
+    { login, resetLoginErrs }
 )(LoginForm);

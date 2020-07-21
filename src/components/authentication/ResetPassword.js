@@ -34,13 +34,13 @@ class LoginForm extends React.Component {
             .then(res => {
                 this.setState({
                     email: "",
-                    success: "Email sent successfully!",
+                    success: "If you provided a registed email, you will receive password reset shortly!",
                     error: false,
                     loading: false,
                 })
                 setTimeout(() => {
                     this.props.history.push('/')
-                }, 1500)
+                }, 2700)
             })
             .catch(err => {
                 this.setState({ error: err, loading: false, success: false });
@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
                         {error && (
                             <Message
                                 error
-                                header="There was some errors with your submission"
+                                header="There were some errors with your submission"
                                 content={JSON.stringify(error)}
                             />
                         )}

@@ -10,6 +10,8 @@ import {
     LOGOUT_SUCCESS,
     REGISTER_SUCCESS,
     REGISTER_FAIL,
+    RESET_REGISTER_ERRORS,
+    RESET_LOGIN_ERRORS
 } from './types';
 
 // CHECK TOKEN & LOAD USER
@@ -84,7 +86,7 @@ export const register = ({ username, password, email }) => dispatch => {
             });
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.response)
             dispatch({
                 payload: err,
                 type: REGISTER_FAIL,
@@ -125,3 +127,8 @@ export const tokenConfig = getState => {
 
     return config;
 };
+
+
+export const resetRegisterErrs = () => dispatch => dispatch({ type: RESET_REGISTER_ERRORS })
+
+export const resetLoginErrs = () => dispatch => dispatch({ type: RESET_LOGIN_ERRORS })
