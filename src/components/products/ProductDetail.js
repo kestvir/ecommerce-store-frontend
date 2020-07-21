@@ -73,7 +73,7 @@ class ProductDetail extends React.Component {
         const { data, error, loading } = this.state;
         const product = data;
         return (
-            <Container>
+            <Container className="container-content">
                 {error && (
                     <Message
                         error

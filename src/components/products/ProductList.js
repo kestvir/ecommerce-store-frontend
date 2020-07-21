@@ -55,7 +55,7 @@ class ProductList extends Component {
     render() {
         const { data, error, loading } = this.state;
         return (
-            <Container>
+            <Container className="container-content">
                 {error && (
                     <Message
                         error
