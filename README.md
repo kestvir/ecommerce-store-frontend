@@ -1,0 +1,1 @@
+Client-side for ecommerce store app. The backend can be found here: https://github.com/kestvir/balance-tracker-backend
