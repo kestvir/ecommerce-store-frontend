@@ -220,9 +220,9 @@ class Profile extends Component {
                 <Grid container columns={2} divided >
                     <Grid.Row columns={1}>
                         <Grid.Column>
-                            {loading && (
+                            {/* {loading && (
                                 <Spinner />
-                            )}
+                            )} */}
                             {error && (
                                 <Message
                                     error

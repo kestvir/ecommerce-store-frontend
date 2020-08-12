@@ -55,15 +55,17 @@ class ProductList extends Component {
     render() {
         const { data, error, loading } = this.state;
         return (
-            <Container className="container-content align-content-center">
+            //className="container-content align-content-center"
+            <Container>
                 {error && (
                     <Message
+                        style={{ marginTop: "3rem" }}
                         error
                         header="There was some errors with your submission"
                         content={JSON.stringify(error)}
                     />
                 )}
-                {loading && (
+                {!loading && (
                     <Spinner />
                 )}
                 <Grid doubling stackable centered columns={4} >
