@@ -79,7 +79,7 @@ class ProductList extends Component {
                             />)
                     })}
                 </Grid>
-            </Container >
+            </Container>
         )
     }
 }
