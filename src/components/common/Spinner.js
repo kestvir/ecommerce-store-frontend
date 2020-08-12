@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
     Dimmer,
     Loader,
@@ -9,7 +9,7 @@ const Spinner = () => {
     return (
         <Segment className="spinner">
             <Dimmer active inverted>
-                <Loader size='massive'>Loading</Loader>
+                <Loader size="huge">Loading</Loader>
             </Dimmer>
         </Segment>
     )

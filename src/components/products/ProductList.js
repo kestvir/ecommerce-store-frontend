@@ -45,7 +45,7 @@ class ProductList extends Component {
             .catch(err => {
                 console.log(err)
                 if (err.response.status === 401) {
-                    this.setState({ error: "You are not logged in!", loading: false });
+                    this.setState({ error: "You are not logged in.", loading: false });
                 } else {
                     this.setState({ error: err, loading: false });
                 }
@@ -56,16 +56,16 @@ class ProductList extends Component {
         const { data, error, loading } = this.state;
         return (
             <Container style={{ flexDirection: "column" }} className="container-content align-content-center">
-                {error && (
-                    <Message
-                        style={{ marginTop: "3rem" }}
-                        error
-                        header="There was some errors with your submission"
-                        content={JSON.stringify(error)}
-                    />
-                )}
                 {loading && (
                     <Spinner />
+                )}
+                {error && (
+                    <Message
+                        style={{ marginTop: "2rem" }}
+                        error
+                        header="There were some errors with your submission."
+                        content={JSON.stringify(error)}
+                    />
                 )}
                 <Grid doubling stackable centered columns={4} >
                     {data.map(product => {

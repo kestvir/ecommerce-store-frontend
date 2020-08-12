@@ -61,7 +61,7 @@ class ProductDetail extends React.Component {
             })
             .catch(err => {
                 if (err.response.status === 401) {
-                    this.setState({ error: "You are not logged in!", loading: false });
+                    this.setState({ error: "You are not logged in.", loading: false });
                 } else {
                     this.setState({ error: err, loading: false });
                 }
@@ -73,19 +73,19 @@ class ProductDetail extends React.Component {
         const { data, error, loading } = this.state;
         const product = data;
         return (
-            <Container className="container-content align-content-center">
-                {error && (
-                    <Message
-                        style={{ marginTop: "3rem" }}
-                        error
-                        header="There was some errors with your submission"
-                        content={JSON.stringify(error)}
-                    />
-                )}
+            <Container style={{ flexDirection: "column" }} className="container-content align-content-center">
                 {loading && (
                     <Spinner />
                 )}
-                <Item.Group>
+                {error && (
+                    <Message
+                        style={{ marginTop: "1rem" }}
+                        error
+                        header="There were some errors with your submission."
+                        content={JSON.stringify(error)}
+                    />
+                )}
+                <Item.Group style={{ margin: 0 }}>
                     <Item className="item-detail-container">
                         <Item.Image className="item-detail-image" src={product.image} />
                         <Item.Content>

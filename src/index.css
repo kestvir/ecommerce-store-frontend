@@ -78,12 +78,13 @@
     width: auto !important;
 }
 
-/* .spinner {
-    position: absolute !important;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
+.ui.dimmer {
+    position: relative;
+}
+
+.ui.segment.spinner {
+    margin-top: 20px;
+}
 
 @media screen and (max-width: 767px) {
     .ui.card {
