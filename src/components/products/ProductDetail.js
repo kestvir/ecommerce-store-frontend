@@ -76,6 +76,7 @@ class ProductDetail extends React.Component {
             <Container className="container-content align-content-center">
                 {error && (
                     <Message
+                        style={{ marginTop: "3rem" }}
                         error
                         header="There was some errors with your submission"
                         content={JSON.stringify(error)}
