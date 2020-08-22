@@ -10,6 +10,7 @@ import {
   Container,
 } from "semantic-ui-react";
 import { userPasswordResetConfirm } from "../../constants";
+import { handleAuthErrs } from "../../utils";
 
 class ResetPasswordConfirm extends React.Component {
   state = {
@@ -41,7 +42,6 @@ class ResetPasswordConfirm extends React.Component {
         }, 1500);
       })
       .catch((err) => {
-        console.log(err.response);
         this.setState({
           error: err,
           loading: false,
@@ -61,13 +61,14 @@ class ResetPasswordConfirm extends React.Component {
               Enter New Password
             </Header>
 
-            {error && (
-              <Message
-                error
-                header="There were some errors with your submission"
-                content={JSON.stringify(error)}
-              />
-            )}
+            {error &&
+              handleAuthErrs(error).map((err) => {
+                return (
+                  <p style={{ color: "red" }} key={uuid()}>
+                    {err}
+                  </p>
+                );
+              })}
 
             {success && <Message success header="Success!" content={success} />}
 

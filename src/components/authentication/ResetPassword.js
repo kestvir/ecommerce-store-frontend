@@ -12,6 +12,7 @@ import {
 import { connect } from "react-redux";
 import { login } from "../../store/actions/auth";
 import { userPasswordReset } from "../../constants";
+import { handleAuthErrs } from "../../utils";
 
 class LoginForm extends React.Component {
   state = {
@@ -58,13 +59,14 @@ class LoginForm extends React.Component {
               Reset Password
             </Header>
 
-            {error && (
-              <Message
-                error
-                header="There were some errors with your submission"
-                content={JSON.stringify(error)}
-              />
-            )}
+            {error &&
+              handleAuthErrs(error).map((err) => {
+                return (
+                  <p style={{ color: "red" }} key={uuid()}>
+                    {err}
+                  </p>
+                );
+              })}
 
             {success && <Message success header="Success!" content={success} />}
 

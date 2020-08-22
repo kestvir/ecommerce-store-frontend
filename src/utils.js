@@ -1,14 +1,32 @@
 import axios from "axios";
 import { endpoint } from "./constants";
 
-export const authAxios = token => {
-    return axios.create({
-        baseURL: endpoint,
-        headers: {
-            'Authorization': `Token ${token}`,
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    });
-}
+export const authAxios = (token) => {
+  return axios.create({
+    baseURL: endpoint,
+    headers: {
+      Authorization: `Token ${token}`,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+};
 
+export const handleAuthErrs = (errObj) => {
+  const errResponse = errObj.response;
+  const errArrStrs = [];
+
+  if (errResponse.status !== 400) {
+    errArrStrs.push(errObj.message);
+  } else {
+    const errResponseData = errResponse.data;
+    for (let key in errResponseData) {
+      if (errResponseData.hasOwnProperty(key)) {
+        errArrStrs.push(
+          `${String(key).toUpperCase()}: ${errResponseData[key]}`
+        );
+      }
+    }
+  }
+  return errArrStrs;
+};
