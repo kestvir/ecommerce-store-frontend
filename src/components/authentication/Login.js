@@ -53,10 +53,7 @@ class LoginForm extends React.Component {
             {error &&
               handleAuthErrs(error).map((err) => {
                 return (
-                  <p
-                    style={{ color: "red", textTransform: "capitalize" }}
-                    key={uuid()}
-                  >
+                  <p className="auth-error" key={uuid()}>
                     {err}
                   </p>
                 );
