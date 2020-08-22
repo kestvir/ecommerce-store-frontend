@@ -25,7 +25,7 @@ export const handleAuthErrs = (errObj) => {
         const errResponseDataStr = `${errResponseData[key]}`;
         const errResponseDataArr = errResponseDataStr.split(",");
         const finalErrStrArr = errResponseDataArr.map((errStr) => {
-          return `${errStr.trim()}<br>`;
+          return `${errStr.trim()[0].toUpperCase() + errStr.substring(1)}`;
         });
 
         errArrStrs.push(
