@@ -41,7 +41,11 @@ class ResetPasswordConfirm extends React.Component {
         }, 1500);
       })
       .catch((err) => {
-        this.setState({ error: err, loading: false, success: false });
+        this.setState({
+          error: err.response["new_password"][0],
+          loading: false,
+          success: false,
+        });
       });
   };
 
@@ -61,7 +65,7 @@ class ResetPasswordConfirm extends React.Component {
               <Message
                 error
                 header="There were some errors with your submission"
-                content={JSON.stringify(error.response["new_password"][0])}
+                content={JSON.stringify(error)}
               />
             )}
 
