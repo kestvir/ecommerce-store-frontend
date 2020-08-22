@@ -1,4 +1,5 @@
 import React from "react";
+import uuid from "react-uuid";
 import {
   Button,
   Form,
@@ -8,7 +9,6 @@ import {
   Segment,
   Container,
 } from "semantic-ui-react";
-import uuid from "react-uuid";
 import { connect } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { register, resetRegisterErrs } from "../../store/actions/auth";
