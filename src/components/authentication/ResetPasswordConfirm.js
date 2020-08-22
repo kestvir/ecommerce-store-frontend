@@ -65,7 +65,10 @@ class ResetPasswordConfirm extends React.Component {
             {error &&
               handleAuthErrs(error).map((err) => {
                 return (
-                  <p style={{ color: "red" }} key={uuid()}>
+                  <p
+                    style={{ color: "red", textTransform: "capitalize" }}
+                    key={uuid()}
+                  >
                     {err}
                   </p>
                 );
