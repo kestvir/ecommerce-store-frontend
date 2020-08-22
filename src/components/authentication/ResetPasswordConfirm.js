@@ -41,8 +41,9 @@ class ResetPasswordConfirm extends React.Component {
         }, 1500);
       })
       .catch((err) => {
+        console.log(err);
         this.setState({
-          error: err.response["new_password"][0],
+          error: err,
           loading: false,
           success: false,
         });
