@@ -22,8 +22,14 @@ export const handleAuthErrs = (errObj) => {
     const errResponseData = errResponse.data;
     for (let key in errResponseData) {
       if (errResponseData.hasOwnProperty(key)) {
+        const errResponseDataStr = `${errResponseData[key]}`;
+        const errResponseDataArr = errResponseDataStr.split(",");
+        const finalErrStrArr = errResponseDataArr.map((errStr) => {
+          return `${errStr.trim()}\n`;
+        });
+
         errArrStrs.push(
-          `${String(key).toUpperCase()}: ${errResponseData[key]}`
+          `${String(key).toUpperCase()}: ${finalErrStrArr.join(" ")}`
         );
       }
     }

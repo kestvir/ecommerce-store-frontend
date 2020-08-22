@@ -58,7 +58,7 @@ class RegistrationForm extends React.Component {
       passwordsMatchErr,
     } = this.state;
     const { error, loading, token } = this.props;
-    console.log(error);
+
     if (token) {
       return <Redirect to="/" />;
     }
