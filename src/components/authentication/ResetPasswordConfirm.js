@@ -47,7 +47,7 @@ class ResetPasswordConfirm extends React.Component {
 
   render() {
     const { newPassword, loading, error, success } = this.state;
-    console.log(JSON.parse(error));
+    console.log(error);
 
     return (
       <Container className="container-content align-content-center">
