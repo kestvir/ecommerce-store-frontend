@@ -123,7 +123,6 @@ export const tokenConfig = (getState) => {
   if (token) {
     config.headers["Authorization"] = `Token ${token}`;
   }
-
   return config;
 };
 

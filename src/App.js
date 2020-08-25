@@ -7,24 +7,22 @@ import "semantic-ui-css/semantic.min.css";
 import { loadUser } from "./store/actions/auth";
 import Layout from "./components/layout/Layout";
 
-
 class App extends Component {
-    componentDidMount() {
-        store.dispatch(loadUser());
-    }
+  componentDidMount() {
+    store.dispatch(loadUser());
+  }
 
-
-    render() {
-        return (
-            <Provider store={store}>
-                <Router>
-                    <Layout {...this.props}>
-                        <BaseRouter />
-                    </Layout>
-                </Router>
-            </Provider>
-        );
-    }
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <Layout {...this.props}>
+            <BaseRouter />
+          </Layout>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;

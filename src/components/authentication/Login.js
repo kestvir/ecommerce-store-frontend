@@ -1,5 +1,4 @@
 import React from "react";
-import uuid from "react-uuid";
 import {
   Button,
   Form,
@@ -12,7 +11,7 @@ import {
 import { connect } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { login, resetLoginErrs } from "../../store/actions/auth";
-import { handleAuthErrs } from "../../utils";
+import AuthErrors from "../common/AuthErrors";
 
 class LoginForm extends React.Component {
   state = {
@@ -50,14 +49,7 @@ class LoginForm extends React.Component {
               Log-in to your account
             </Header>
 
-            {error &&
-              handleAuthErrs(error).map((err) => {
-                return (
-                  <p className="auth-error" key={uuid()}>
-                    {err}
-                  </p>
-                );
-              })}
+            {error && <AuthErrors error={error} />}
 
             <React.Fragment>
               <Form size="large" onSubmit={this.handleSubmit}>

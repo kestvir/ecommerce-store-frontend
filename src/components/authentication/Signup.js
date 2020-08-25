@@ -1,5 +1,4 @@
 import React from "react";
-import uuid from "react-uuid";
 import {
   Button,
   Form,
@@ -12,7 +11,7 @@ import {
 import { connect } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { register, resetRegisterErrs } from "../../store/actions/auth";
-import { handleAuthErrs } from "../../utils";
+import AuthErrors from "../common/AuthErrors";
 
 class RegistrationForm extends React.Component {
   state = {
@@ -70,14 +69,7 @@ class RegistrationForm extends React.Component {
               Signup to your account
             </Header>
 
-            {error &&
-              handleAuthErrs(error).map((err) => {
-                return (
-                  <p className="auth-error" key={uuid()}>
-                    {err}
-                  </p>
-                );
-              })}
+            {error && <AuthErrors error={error} />}
 
             {passwordsMatchErr && (
               <p style={{ color: "red" }}>

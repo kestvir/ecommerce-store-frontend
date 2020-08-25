@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import uuid from "react-uuid";
 import {
   Button,
   Form,
@@ -13,7 +12,7 @@ import {
 import { connect } from "react-redux";
 import { login } from "../../store/actions/auth";
 import { userPasswordReset } from "../../constants";
-import { handleAuthErrs } from "../../utils";
+import AuthErrors from "../common/AuthErrors";
 
 class LoginForm extends React.Component {
   state = {
@@ -60,14 +59,7 @@ class LoginForm extends React.Component {
               Reset Password
             </Header>
 
-            {error &&
-              handleAuthErrs(error).map((err) => {
-                return (
-                  <p className="auth-error" key={uuid()}>
-                    {err}
-                  </p>
-                );
-              })}
+            {error && <AuthErrors error={error} />}
 
             {success && <Message success header="Success!" content={success} />}
 

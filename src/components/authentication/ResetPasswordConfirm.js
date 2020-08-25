@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import uuid from "react-uuid";
 import {
   Button,
   Form,
@@ -11,7 +10,7 @@ import {
   Container,
 } from "semantic-ui-react";
 import { userPasswordResetConfirm } from "../../constants";
-import { handleAuthErrs } from "../../utils";
+import AuthErrors from "../common/AuthErrors";
 
 class ResetPasswordConfirm extends React.Component {
   state = {
@@ -62,14 +61,7 @@ class ResetPasswordConfirm extends React.Component {
               Enter New Password
             </Header>
 
-            {error &&
-              handleAuthErrs(error).map((err) => {
-                return (
-                  <p className="auth-error" key={uuid()}>
-                    {err}
-                  </p>
-                );
-              })}
+            {error && <AuthErrors error={error} />}
 
             {success && <Message success header="Success!" content={success} />}
 
