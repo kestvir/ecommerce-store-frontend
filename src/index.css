@@ -82,6 +82,10 @@
     position: relative;
 }
 
+.ui.menu {
+    border-radius: 0;
+}
+
 .ui.segment.spinner {
     margin-top: 20px;
 }
