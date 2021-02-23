@@ -57,9 +57,9 @@ class ProductList extends Component {
         {loading && <Spinner />}
         {error && (
           <Message
-            style={{ marginTop: "2rem" }}
+            style={{ marginTop: "1rem", textAlign: "center" }}
             error
-            header="There were some errors with your submission."
+            header="Something went wrong."
             content={JSON.stringify(error)}
           />
         )}

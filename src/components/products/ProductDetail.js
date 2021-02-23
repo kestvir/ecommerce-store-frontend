@@ -78,9 +78,9 @@ class ProductDetail extends React.Component {
         {loading && <Spinner />}
         {error && (
           <Message
-            style={{ marginTop: "1rem" }}
+            style={{ marginTop: "1rem", textAlign: "center" }}
             error
-            header="There were some errors with your submission."
+            header="Something went wrong."
             content={JSON.stringify(error)}
           />
         )}
@@ -98,7 +98,7 @@ class ProductDetail extends React.Component {
               <Item.Extra>
                 <Form>
                   <Form.Field inline className="item-detail-options">
-                    <Label pointing="ight">Quantity</Label>
+                    <Label pointing="right">Quantity</Label>
                     <Input
                       onChange={this.handleChange}
                       className="item-quantity-input"
