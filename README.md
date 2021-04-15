@@ -1,6 +1,8 @@
-# Ecommerce store
+# Recipe reader
 
 The Ecommerce store web app simulates online item purchases from a general ecommerce store.
+
+https://my-ecommerce-store.netlify.app/
 
 ![products](https://user-images.githubusercontent.com/25966281/114882139-5226c200-9e0c-11eb-8c70-9274ee2e78f5.png)
 
