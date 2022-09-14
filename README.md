@@ -1,4 +1,4 @@
-# Recipe reader
+# Ecommerce store
 
 The Ecommerce store web app simulates online item purchases from a general ecommerce store.
 
